@@ -1,0 +1,14 @@
+FPS = 120
+
+MULTISHOT = 1
+DAMAGE = 10
+HP = 100
+STEALTH = 0
+ATTACK_SPEED = 1
+SPEED = 20
+ENEMY_SPEED = 7
+ENEMY_DMG = 1
+MODE = 'game'
+ARMOR = 0
+
+cubes_can_sound = True
