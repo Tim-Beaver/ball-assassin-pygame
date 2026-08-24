@@ -1,7 +1,6 @@
 from pygame import *
-import os
 from math import *
-from particles import Particle, create_particles
+from particles import create_particles
 import settings
 
 

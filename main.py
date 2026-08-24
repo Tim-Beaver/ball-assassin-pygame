@@ -5,7 +5,6 @@ from enemies import EnemyCube
 from uxgui import HpBar, WaveTime, WaveCount, Hp_text, Loss_text, KdUlt
 import random
 import schedule
-import os
 from math import *
 
 

@@ -1,8 +1,5 @@
 from pygame import *
-import settings
 from math import *
-import os
-import settings
 import random
 
 
