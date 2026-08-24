@@ -161,17 +161,6 @@ class Pointer(sprite.Sprite):
         self.screen, self.player, self.side = scr, player, side
         self.rect = Rect(600, 300, 100, 100)
         self.rect = self.image.get_rect(center=self.rect.center)
-        '''self.points = [
-            (
-                self.player.rect.x + (self.player.radius - side / 1.5),
-                self.player.rect.y - 10,
-            ),
-            (self.player.rect.x + (self.player.radius), self.player.rect.y - side - 10),
-            (
-                self.player.rect.x + (self.player.radius + side / 1.5),
-                self.player.rect.y - 10,
-            ),
-        ]'''
 
         mouse_x, mouse_y = mouse.get_pos()
         rel_x, rel_y = mouse_x - self.rect.x, mouse_y - self.rect.y
@@ -180,43 +169,19 @@ class Pointer(sprite.Sprite):
     def update(self, *args):
         self.screen.blit(self.image, self.rect)
         
-        '''self.points = [
-            (
-                self.player.rect.x + (self.player.radius - self.side / 1.5),
-                self.player.rect.y - 10,
-            ),
-            (
-                self.player.rect.x + (self.player.radius),
-                self.player.rect.y - self.side - 10,
-            ),
-            (
-                self.player.rect.x + (self.player.radius + self.side / 1.5),
-                self.player.rect.y - 10,
-            ),
-        ]
-        '''
 
         mouse_x, mouse_y = mouse.get_pos()
         rel_x, rel_y = mouse_x - self.rect.x, mouse_y - self.rect.y
 
-        """self.angle = degrees(-atan2(rel_y, rel_x))
-        self.image = transform.rotate(self.origimage, int(self.angle))
-        self.rect = self.image.get_rect(center=self.player.rect.center)
-        self.rect.move(self.player.rect.x, self.player.rect.y)"""
 
-        # The vector to the target (the mouse position).
         self.direction = (
             math.Vector2(mouse.get_pos()) - math.Vector2([self.rect.centerx, self.rect.centery])
         )
-        # .as_polar gives you the polar coordinates of the vector,
-        # i.e. the radius (distance to the target) and the angle.
         radius, self.angle = self.direction.as_polar()
-        # Rotate the image by the negative angle (y-axis in pygame is flipped).
         self.Rotate()
 
     def Rotate(self):
         self.image = transform.rotate(self.origimage, -self.angle - 90)
-        # Create a new rect with the center of the old rect.
         self.rect = self.image.get_rect(center=self.player.rect.center)
 
 
@@ -236,15 +201,10 @@ class Bullet(sprite.Sprite):
             Vector2(mouse.get_pos()) - Vector2([self.rect.x + 10 * multishot, self.rect.y + 10 * multishot])
         ).normalize()
         
-        # .as_polar gives you the polar coordinates of the vector,
-        # i.e. the radius (distance to the target) and the angle.
         radius, self.angle = self.direction.as_polar()
         
         self.image = transform.rotate(self.origimage, -self.angle - 90)
         self.rect = self.image.get_rect(center=self.player.rect.center)
-        # Rotate the image by the negative angle (y-axis in pygame is flipped).
-        # self.image = transform.rotate(self.origimage, -self.angle - 90)
-        # Create a new rect with the center of the old rect.
         
 
     def update(self, *args):

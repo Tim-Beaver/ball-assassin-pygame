@@ -19,7 +19,6 @@ class HpBar(sprite.Sprite):
             self.w -= self.Lerp(self.w, (self.player.hp / settings.HP), 0.05)
         elif self.w < (self.player.hp / settings.HP) * self.rect1.width:
             self.w += self.Lerp(self.w, (self.player.hp / settings.HP), 0.05)
-        #self.w = (self.player.hp / settings.HP) * self.rect1.width
         self.rect2.width = self.w
         
         draw.rect(self.screen, (255, 255, 255), self.rect2)
