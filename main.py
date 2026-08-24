@@ -288,10 +288,10 @@ while Running:
     elif settings.MODE == "wasted":
         if not loss_text:
             loss_text = Loss_text(loss_ui, screen, WAVE)
-        players.update(deltaTime)
         particles.update(deltaTime)
         particles.draw(screen)
         loss_ui.update(deltaTime, t, counter)
+        players.update(deltaTime)
         screen.blit(
             game_over_screen,
             game_over_screen.get_rect(

@@ -77,9 +77,9 @@ class Loss_text(sprite.Sprite):
         self.screen = screen
         self.wave = wave
         self.fnt = font.SysFont('AC_line', 64)
-        self.lines = f'John Wick failed!-Score: {wave}-Well done'.split('-')
+        self.lines = f'Game Over-Score: {wave}-Well done'.split('-')
     def update(self, *args):
-        self.lines = f'John Wick failed!-Score: {self.wave}-Well done'.split('-')
+        self.lines = f'Game Over-Score: {self.wave}-Well done'.split('-')
         for x in self.lines:
             self.txt = self.fnt.render(x, True, (255, 255, 255))
             self.rect = self.txt.get_rect(center=(640, 240 + 72 * self.lines.index(x)))
