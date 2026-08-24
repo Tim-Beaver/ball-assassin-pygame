@@ -6,4 +6,5 @@ R - ultimate (when ready)
 Aim with the mouse**
 
 The game needs pygame 2.6.1 (for the `scale_by` function to work), random, math and schedule to run.
-<img width="316" height="257" alt="ball" src="https://github.com/user-attachments/assets/6e49e9fc-7635-4c3a-a90c-bc6169f354ec" />
+
+<img width="316" height="257" alt="ball" src="https://github.com/user-attachments/assets/df9f30e5-c016-40b8-befe-92416a90abfa" />
