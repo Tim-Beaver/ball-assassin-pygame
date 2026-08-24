@@ -4,6 +4,7 @@ This is a pygame top-down shooter where you control a circle and shoot squares w
 LMB (click or hold) - shoot<br>
 R - ultimate (when ready)<br>
 Aim with the mouse**<br>
+F12 - skip waves<br>
 <br>
 The game needs pygame 2.6.1 (for the `scale_by` function to work), random, math and schedule to run.<br>
 <br>
